@@ -32,7 +32,6 @@
             line-height: 1.8;
         }
 
-        /* ===== ТАБЫ ===== */
         .tab-container {
             display: flex;
             justify-content: center;
@@ -81,7 +80,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== ИНФО БЛОК ===== */
         .info-block {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -120,7 +118,6 @@
             display: block;
         }
 
-        /* ===== ФОРМА ===== */
         .horoscope-form {
             background: rgba(20, 20, 35, 0.5);
             border: 1px solid rgba(201, 160, 80, 0.08);
@@ -179,7 +176,6 @@
             box-shadow: 0 0 30px rgba(201, 160, 80, 0.05);
         }
 
-        /* ===== РЕЗУЛЬТАТ ===== */
         .horoscope-result {
             display: none;
             background: rgba(20, 20, 35, 0.6);
@@ -350,7 +346,6 @@
             color: #c9a050;
         }
 
-        /* ===== ТАБЛИЦА РУН ПО МЕСЯЦАМ ===== */
         .month-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -402,7 +397,6 @@
             font-style: italic;
         }
 
-        /* ===== ТАБЛИЦА РУН ПО ГОДАМ ===== */
         .year-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -443,7 +437,6 @@
             color: #d4c9b8;
         }
 
-        /* ===== ТАБЛИЦА ЗОДИАКОВ ===== */
         .zodiac-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -500,7 +493,6 @@
             color: #b8ab9a;
         }
 
-        /* ===== АДАПТАЦИЯ ===== */
         @media (max-width: 768px) {
             .horoscope-page h1 {
                 font-size: 28px;
@@ -558,372 +550,103 @@
                 font-size: 11px;
             }
         }
-
-        /* ===== ВЫДЕЛЕННАЯ КНОПКА "КОНСУЛЬТАЦИЯ" ===== */
-        .consult-link-nav {
-            color: #c9a050 !important;
-            border-bottom-color: rgba(201, 160, 80, 0.3) !important;
-            font-weight: 700 !important;
-            background: rgba(201, 160, 80, 0.05);
-            padding: 8px 12px 6px 12px !important;
-            border-radius: 8px;
-            border-bottom: 2px solid #c9a050 !important;
-        }
-
-        .consult-link-nav:hover {
-            background: rgba(201, 160, 80, 0.12) !important;
-            border-bottom-color: #c9a050 !important;
-            box-shadow: 0 0 20px rgba(201, 160, 80, 0.05);
-        }
-
-        /* ===== НАВИГАЦИЯ ===== */
-        nav {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        nav a {
-            color: #b8ab9a;
-            text-decoration: none;
-            font-size: 16px;
-            letter-spacing: 1.5px;
-            transition: 0.3s;
-            border-bottom: 2px solid transparent;
-            padding: 8px 6px 6px 6px;
-            position: relative;
-            white-space: nowrap;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #c9a050;
-            border-bottom-color: #c9a050;
-        }
-
-        /* ===== ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ===== */
-        .main-link,
-        .runes-link,
-        .horoscope-link,
-        .divination-link,
-        .gods-link,
-        .myth-link,
-        .consult-link,
-        .feedback-link,
-        .about-link,
-        .support-link {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .main-link .tooltip,
-        .runes-link .tooltip,
-        .horoscope-link .tooltip,
-        .divination-link .tooltip,
-        .gods-link .tooltip,
-        .myth-link .tooltip,
-        .consult-link .tooltip,
-        .feedback-link .tooltip,
-        .about-link .tooltip,
-        .support-link .tooltip {
-            visibility: hidden;
-            opacity: 0;
-            width: 230px;
-            background: rgba(20, 20, 35, 0.95);
-            color: #d4c9b8;
-            text-align: center;
-            padding: 14px 18px;
-            border-radius: 12px;
-            border: 1px solid rgba(201, 160, 80, 0.2);
-            font-family: 'Georgia', serif;
-            font-size: 14px;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
-            position: absolute;
-            top: calc(100% + 18px);
-            left: 50%;
-            transform: translateX(-50%) translateY(-5px);
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-            z-index: 100;
-            pointer-events: none;
-            white-space: normal;
-        }
-
-        .main-link .tooltip::after,
-        .runes-link .tooltip::after,
-        .horoscope-link .tooltip::after,
-        .divination-link .tooltip::after,
-        .gods-link .tooltip::after,
-        .myth-link .tooltip::after,
-        .consult-link .tooltip::after,
-        .feedback-link .tooltip::after,
-        .about-link .tooltip::after,
-        .support-link .tooltip::after {
-            content: '';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-bottom-color: rgba(201, 160, 80, 0.2);
-        }
-
-        .main-link:hover .tooltip,
-        .runes-link:hover .tooltip,
-        .horoscope-link:hover .tooltip,
-        .divination-link:hover .tooltip,
-        .gods-link:hover .tooltip,
-        .myth-link:hover .tooltip,
-        .consult-link:hover .tooltip,
-        .feedback-link:hover .tooltip,
-        .about-link:hover .tooltip,
-        .support-link:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .main-link .tooltip .highlight,
-        .runes-link .tooltip .highlight,
-        .horoscope-link .tooltip .highlight,
-        .divination-link .tooltip .highlight,
-        .gods-link .tooltip .highlight,
-        .myth-link .tooltip .highlight,
-        .consult-link .tooltip .highlight,
-        .feedback-link .tooltip .highlight,
-        .about-link .tooltip .highlight,
-        .support-link .tooltip .highlight {
-            color: #e8c85a;
-            font-weight: 700;
-            font-family: 'Cinzel', serif;
-        }
-
-        .main-link .tooltip .rune-icon,
-        .runes-link .tooltip .rune-icon,
-        .horoscope-link .tooltip .rune-icon,
-        .divination-link .tooltip .rune-icon,
-        .gods-link .tooltip .rune-icon,
-        .myth-link .tooltip .rune-icon,
-        .consult-link .tooltip .rune-icon,
-        .feedback-link .tooltip .rune-icon,
-        .about-link .tooltip .rune-icon,
-        .support-link .tooltip .rune-icon {
-            color: #e8c85a;
-            font-size: 20px;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        /* ===== АДАПТАЦИЯ ===== */
-        @media (max-width: 1100px) {
-            nav {
-                gap: 18px;
-            }
-            nav a {
-                font-size: 14px;
-                padding: 6px 4px 4px 4px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            nav {
-                gap: 14px;
-            }
-            nav a {
-                font-size: 13px;
-                letter-spacing: 1px;
-                padding: 6px 3px 4px 3px;
-            }
-            .main-link .tooltip,
-            .runes-link .tooltip,
-            .horoscope-link .tooltip,
-            .divination-link .tooltip,
-            .gods-link .tooltip,
-            .myth-link .tooltip,
-            .consult-link .tooltip,
-            .feedback-link .tooltip,
-            .about-link .tooltip,
-            .support-link .tooltip {
-                width: 200px;
-                font-size: 13px;
-                padding: 12px 14px;
-                top: calc(100% + 14px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav {
-                justify-content: center;
-                gap: 12px 16px;
-            }
-            nav a {
-                font-size: 14px;
-                letter-spacing: 1px;
-                padding: 6px 4px;
-                border-bottom-width: 2px;
-            }
-            .main-link .tooltip,
-            .runes-link .tooltip,
-            .horoscope-link .tooltip,
-            .divination-link .tooltip,
-            .gods-link .tooltip,
-            .myth-link .tooltip,
-            .consult-link .tooltip,
-            .feedback-link .tooltip,
-            .about-link .tooltip,
-            .support-link .tooltip {
-                width: 200px;
-                font-size: 13px;
-                padding: 12px 14px;
-                top: calc(100% + 12px);
-            }
-            .main-link .tooltip .rune-icon,
-            .runes-link .tooltip .rune-icon,
-            .horoscope-link .tooltip .rune-icon,
-            .divination-link .tooltip .rune-icon,
-            .gods-link .tooltip .rune-icon,
-            .myth-link .tooltip .rune-icon,
-            .consult-link .tooltip .rune-icon,
-            .feedback-link .tooltip .rune-icon,
-            .about-link .tooltip .rune-icon,
-            .support-link .tooltip .rune-icon {
-                font-size: 18px;
-            }
-            .consult-link-nav {
-                padding: 6px 8px 4px 8px !important;
-                font-size: 13px !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                gap: 8px 10px;
-            }
-            nav a {
-                font-size: 12px;
-                letter-spacing: 0.5px;
-                padding: 5px 3px;
-            }
-            .main-link .tooltip,
-            .runes-link .tooltip,
-            .horoscope-link .tooltip,
-            .divination-link .tooltip,
-            .gods-link .tooltip,
-            .myth-link .tooltip,
-            .consult-link .tooltip,
-            .feedback-link .tooltip,
-            .about-link .tooltip,
-            .support-link .tooltip {
-                width: 160px;
-                font-size: 11px;
-                padding: 10px 12px;
-                top: calc(100% + 10px);
-            }
-            .consult-link-nav {
-                padding: 5px 6px 3px 6px !important;
-                font-size: 11px !important;
-            }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
 
-        <!-- ===== ШАПКА С МЕНЮ ===== -->
         <header>
             <div class="logo">
                 ᛝᚲᚷᛉᚠᚨᚱ
                 <span>Старший Футарк · 24 руны</span>
             </div>
             <nav>
-                <a href="index.html" class="main-link">
-                    Главная
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚱ</span>
-                        <span class="highlight">Вернуться на главную</span><br>
-                        Главная страница с руническим кругом
-                    </span>
-                </a>
-                <a href="runes.html" class="runes-link">
-                    Руны
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚠ</span>
-                        <span class="highlight">Все 24 руны Футарка</span><br>
-                        Значения, символы и атты
-                    </span>
-                </a>
-                <a href="rune-horoscope.html" class="horoscope-link">
-                    Гороскоп
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛃ</span>
-                        <span class="highlight">Рунический гороскоп</span><br>
-                        Предсказание по дате рождения
-                    </span>
-                </a>
-                <a href="rune-divination.html" class="divination-link">
-                    Гадание
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛉ</span>
-                        <span class="highlight">Онлайн-гадание на рунах</span><br>
-                        Брось руны и узнай судьбу
-                    </span>
-                </a>
-                <a href="gods.html" class="gods-link">
-                    Боги
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚨ</span>
-                        <span class="highlight">Скандинавские боги</span><br>
-                        Один, Тор, Локи, Фрейя и другие
-                    </span>
-                </a>
-                <a href="mifolgi.html" class="myth-link">
-                    Мифология
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛝ</span>
-                        <span class="highlight">Подробная страница</span><br>
-                        Девять миров, руны и боги
-                    </span>
-                </a>
-                <a href="consultation.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
-                   ✈️ Консультация 
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚨ</span>
-                        <span class="highlight">Консультация рунолога</span><br>
-                        Помощь в вопросах жизни и судьбы
-                    </span>
-                </a>
-                <a href="feedback.html" class="feedback-link">
-                   📧 Обратная связь
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚨ</span>
-                        <span class="highlight">Написать создателю</span><br>
-                        Вопросы, идеи и поддержка
-                    </span>
-                </a>
-                <a href="about.html" class="about-link">
-                    О сайте
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛉ</span>
-                        <span class="highlight">О проекте</span><br>
-                        Создатель, цели и поддержка
-                    </span>
-                </a>
-                <a href="support.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
-                    ₽ Поддержка
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛉ</span>
-                        <span class="highlight">Поддержать создателя</span><br>
-                        Финансовая поддержка, информация об авторе
-                    </span>
-                </a>
+                <div class="nav-row nav-row-left">
+                    <a href="index.html" class="main-link">
+                        Главная
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚱ</span>
+                            <span class="highlight">Вернуться на главную</span><br>
+                            Главная страница с руническим кругом
+                        </span>
+                    </a>
+                    <a href="runes.html" class="runes-link">
+                        24 Руны Футарха
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚠ</span>
+                            <span class="highlight">Все 24 руны Футарка</span><br>
+                            Значения, символы и атты
+                        </span>
+                    </a>
+                    <a href="rune-horoscope.html" class="horoscope-link">
+                        Рунический гороскоп
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛃ</span>
+                            <span class="highlight">Рунический гороскоп</span><br>
+                            Предсказание по дате рождения
+                        </span>
+                    </a>
+                    <a href="rune-divination.html" class="divination-link">
+                        Гадание на рунах
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛉ</span>
+                            <span class="highlight">Онлайн-гадание на рунах</span><br>
+                            Брось руны и узнай судьбу
+                        </span>
+                    </a>
+                    <a href="gods.html" class="gods-link">
+                        Асы и Боги Скандинавии
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚨ</span>
+                            <span class="highlight">Скандинавские боги</span><br>
+                            Один, Тор, Локи, Фрейя и другие
+                        </span>
+                    </a>
+                    <a href="mifolgi.html" class="myth-link">
+                        Скандинавская мифология
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛝ</span>
+                            <span class="highlight">Подробная страница</span><br>
+                            Девять миров, руны и боги
+                        </span>
+                    </a>
+                    <a href="about.html" class="about-link">
+                        О создании сайте
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛉ</span>
+                            <span class="highlight">О проекте</span><br>
+                            Создатель, цели и поддержка
+                        </span>
+                    </a>
+                </div>
+
+                <div class="nav-row nav-row-right">
+                    <a href="feedback.html" class="feedback-link">
+                        📧 Обратная связь с поддержкой
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚨ</span>
+                            <span class="highlight">Написать разработчику сайта</span><br>
+                            Вопросы, идеи и поддержка
+                        </span>
+                    </a>
+                    <a href="consultation.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
+                        ✈️ Консультация рунолога
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚨ</span>
+                            <span class="highlight">Консультация рунолога</span><br>
+                            Помощь в вопросах жизни и судьбы
+                        </span>
+                    </a>
+                    <a href="support.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
+                        ₽ Финансовая поддержка сайта
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛉ</span>
+                            <span class="highlight">Поддержать создателя</span><br>
+                            Финансовая поддержка, информация об авторе
+                        </span>
+                    </a>
+                </div>
             </nav>
         </header>
 
@@ -936,7 +659,6 @@
                 Введи свою дату рождения — и узнай, какая руна ведёт тебя по жизни.
             </p>
 
-            <!-- ===== ИНФО БЛОК ===== -->
             <div class="info-block">
                 <div class="info-item">
                     <span class="number">24</span>
@@ -955,7 +677,6 @@
                 </div>
             </div>
 
-            <!-- ===== ФОРМА ===== -->
             <div class="horoscope-form">
                 <label for="birthdate">📅 Введи дату рождения</label>
                 <input type="date" id="birthdate" max="2026-12-31" min="1900-01-01">
@@ -963,7 +684,6 @@
                 <button id="showHoroscope">✦ Узнать свою руну ✦</button>
             </div>
 
-            <!-- ===== РЕЗУЛЬТАТ ===== -->
             <div class="horoscope-result" id="result">
                 <div class="rune-display">
                     <span class="symbol" id="resultSymbol">ᚠ</span>
@@ -1010,13 +730,9 @@
                 </div>
             </div>
 
-            <!-- ============================================================ -->
             <!-- ===== РУНА ДНЯ И РУНА НЕДЕЛИ ===== -->
-            <!-- ============================================================ -->
-
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0 20px;">
 
-                <!-- ===== РУНА ДНЯ ===== -->
                 <div style="background: rgba(20, 20, 35, 0.5); border: 1px solid rgba(201, 160, 80, 0.08); border-radius: 20px; padding: 30px 25px; text-align: center; transition: 0.3s;" 
                      onmouseover="this.style.borderColor='rgba(201,160,80,0.2)'; this.style.boxShadow='0 10px 40px rgba(201,160,80,0.05)';" 
                      onmouseout="this.style.borderColor='rgba(201,160,80,0.08)'; this.style.boxShadow='none';">
@@ -1034,7 +750,6 @@
                     </a>
                 </div>
 
-                <!-- ===== РУНА НЕДЕЛИ ===== -->
                 <div style="background: rgba(20, 20, 35, 0.5); border: 1px solid rgba(201, 160, 80, 0.08); border-radius: 20px; padding: 30px 25px; text-align: center; transition: 0.3s;"
                      onmouseover="this.style.borderColor='rgba(201,160,80,0.2)'; this.style.boxShadow='0 10px 40px rgba(201,160,80,0.05)';" 
                      onmouseout="this.style.borderColor='rgba(201,160,80,0.08)'; this.style.boxShadow='none';">
@@ -1054,58 +769,44 @@
 
             </div>
 
-            <!-- ============================================================ -->
             <!-- ===== ВКЛАДКИ: МЕСЯЦЫ, ГОДЫ, ЗОДИАК ===== -->
-            <!-- ============================================================ -->
-
             <div style="margin-top: 50px; border-top: 1px solid rgba(201, 160, 80, 0.1); padding-top: 40px;">
                 <h2 style="text-align: center; color: #c9a050; font-size: 28px; letter-spacing: 4px; margin-bottom: 25px;">
                     ✦ Полный рунический календарь ✦
                 </h2>
 
-                <!-- Табы -->
                 <div class="tab-container">
                     <button class="tab-btn active" data-tab="tab-months">📅 По месяцам</button>
                     <button class="tab-btn" data-tab="tab-years">📆 По годам</button>
                     <button class="tab-btn" data-tab="tab-zodiac">♈ По знакам Зодиака</button>
                 </div>
 
-                <!-- ===== ВКЛАДКА: МЕСЯЦЫ ===== -->
                 <div class="tab-content active" id="tab-months">
                     <p style="text-align: center; color: #b8ab9a; font-size: 14px; font-family: 'Georgia', serif; margin-bottom: 20px;">
                         Год начинается с дня весеннего равноденствия — 23 марта. <br>
                         Каждой руне соответствует примерно 15 дней.
                     </p>
-                    <div class="month-grid" id="monthGrid">
-                        <!-- Заполняется JavaScript -->
-                    </div>
+                    <div class="month-grid" id="monthGrid"></div>
                 </div>
 
-                <!-- ===== ВКЛАДКА: ГОДЫ ===== -->
                 <div class="tab-content" id="tab-years">
                     <p style="text-align: center; color: #b8ab9a; font-size: 14px; font-family: 'Georgia', serif; margin-bottom: 20px;">
                         Каждый год находится под покровительством определённой руны. <br>
                         Цикл повторяется каждые 24 года.
                     </p>
-                    <div class="year-grid" id="yearGrid">
-                        <!-- Заполняется JavaScript -->
-                    </div>
+                    <div class="year-grid" id="yearGrid"></div>
                 </div>
 
-                <!-- ===== ВКЛАДКА: ЗОДИАК ===== -->
                 <div class="tab-content" id="tab-zodiac">
                     <p style="text-align: center; color: #b8ab9a; font-size: 14px; font-family: 'Georgia', serif; margin-bottom: 20px;">
                         Каждому знаку Зодиака соответствует по две руны.
                     </p>
-                    <div class="zodiac-grid" id="zodiacGrid">
-                        <!-- Заполняется JavaScript -->
-                    </div>
+                    <div class="zodiac-grid" id="zodiacGrid"></div>
                 </div>
             </div>
 
         </section>
 
-        <!-- ===== ПОДВАЛ ===== -->
         <footer>
             <p>ᛝᚲᚷᛉᚠᚨᚱ · 24 руны Старшего Футарка</p>
             <p style="margin-top: 8px;">
@@ -1120,6 +821,7 @@
 
     </div>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         // ============================================================
         // ===== ДАННЫЕ ДЛЯ ГОРОСКОПА =====
@@ -1190,10 +892,6 @@
             });
         }
 
-        // ============================================================
-        // ===== ОСНОВНАЯ ЛОГИКА ГОРОСКОПА =====
-        // ============================================================
-
         const runeData = {
             'ᚠ': { name: 'Феху', nameEn: 'Fehu', att: 'Первый атт · Фрейр', meaning: 'Феху — руна богатства и изобилия. Она наделяет человека энергией созидания...', strengths: 'Творческий потенциал, предприимчивость, щедрость', weaknesses: 'Склонность к расточительству, зависимость от материального', advice: 'Сосредоточься на том, что действительно важно. Не разменивайся на мелочи.', keywords: ['Богатство', 'Созидание', 'Изобилие', 'Успех'], link: 'rune-fechu.html' },
             'ᚢ': { name: 'Уруз', nameEn: 'Uruz', att: 'Первый атт · Фрейр', meaning: 'Уруз — руна первобытной силы и выносливости...', strengths: 'Сила воли, выносливость, энергия', weaknesses: 'Упрямство, импульсивность, склонность к доминированию', advice: 'Твоя сила велика, но помни, что её нужно направлять с умом.', keywords: ['Сила', 'Мощь', 'Стойкость', 'Преодоление'], link: 'rune-uruz.html' },
@@ -1221,20 +919,12 @@
             'ᛞ': { name: 'Дагаз', nameEn: 'Dagaz', att: 'Третий атт · Тюр', meaning: 'Дагаз — руна рассвета и трансформации...', strengths: 'Вера, трансформация, вдохновение', weaknesses: 'Импульсивность, нетерпеливость', advice: 'Рассвет уже близко. Даже если сейчас темно — ты на пороге великого прорыва.', keywords: ['Рассвет', 'Прорыв', 'Трансформация', 'Новое начало'], link: 'rune-dagaz.html' }
         };
 
-        // ============================================================
-        // ===== ОПРЕДЕЛЕНИЕ РУНЫ ПО ДАТЕ =====
-        // ============================================================
-
         function getRuneForDate(date) {
             const start = new Date(1900, 2, 23);
             const diff = Math.floor((date - start) / (1000 * 60 * 60 * 24));
             const index = diff % 24;
             return runeSymbols[index];
         }
-
-        // ============================================================
-        // ===== ОБРАБОТКА ФОРМЫ =====
-        // ============================================================
 
         const input = document.getElementById('birthdate');
         const button = document.getElementById('showHoroscope');
@@ -1302,14 +992,9 @@
             }, 400);
         });
 
-        // ============================================================
-        // ===== РУНА ДНЯ И РУНА НЕДЕЛИ (ОБНОВЛЕНИЕ) =====
-        // ============================================================
-
         function updateDailyAndWeekRunes() {
             const now = new Date();
 
-            // ---- РУНА ДНЯ ----
             const startOfYear = new Date(now.getFullYear(), 0, 0);
             const diffDay = (now - startOfYear) + (startOfYear.getTimezoneOffset() - now.getTimezoneOffset()) * 60000;
             const dayOfYear = Math.floor(diffDay / (1000 * 60 * 60 * 24));
@@ -1325,7 +1010,6 @@
                 document.getElementById('dailyRuneLink').dataset.href = dailyData.link;
             }
 
-            // ---- РУНА НЕДЕЛИ ----
             const firstDayOfYear = new Date(now.getFullYear(), 0, 1);
             const daysSinceStart = Math.floor((now - firstDayOfYear) / (1000 * 60 * 60 * 24));
             const weekNumber = Math.floor(daysSinceStart / 7);
@@ -1342,14 +1026,8 @@
             }
         }
 
-        // Запускаем обновление при загрузке
         updateDailyAndWeekRunes();
 
-        // ============================================================
-        // ===== ЗАПОЛНЕНИЕ ТАБЛИЦ =====
-        // ============================================================
-
-        // ---- Месяцы ----
         const monthGrid = document.getElementById('monthGrid');
         monthRunes.forEach(rune => {
             const card = document.createElement('div');
@@ -1390,7 +1068,6 @@
             monthGrid.appendChild(card);
         });
 
-        // ---- Годы ----
         const yearGrid = document.getElementById('yearGrid');
         yearRunes.forEach(item => {
             const card = document.createElement('div');
@@ -1430,7 +1107,6 @@
             yearGrid.appendChild(card);
         });
 
-        // ---- Зодиаки ----
         const zodiacGrid = document.getElementById('zodiacGrid');
         zodiacRunes.forEach(item => {
             const card = document.createElement('div');
@@ -1451,10 +1127,6 @@
             `;
             zodiacGrid.appendChild(card);
         });
-
-        // ============================================================
-        // ===== ТАБЫ =====
-        // ============================================================
 
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = {

@@ -277,7 +277,6 @@
             margin-top: 12px;
         }
 
-        /* ===== ТРИ РУНЫ (ПРОШЛОЕ, НАСТОЯЩЕЕ, БУДУЩЕЕ) - ГОРИЗОНТАЛЬНО ===== */
         .three-runes-container {
             display: flex;
             justify-content: center;
@@ -457,372 +456,103 @@
                 font-size: 9px;
             }
         }
-
-        /* ===== ВЫДЕЛЕННАЯ КНОПКА "КОНСУЛЬТАЦИЯ" ===== */
-        .consult-link-nav {
-            color: #c9a050 !important;
-            border-bottom-color: rgba(201, 160, 80, 0.3) !important;
-            font-weight: 700 !important;
-            background: rgba(201, 160, 80, 0.05);
-            padding: 8px 12px 6px 12px !important;
-            border-radius: 8px;
-            border-bottom: 2px solid #c9a050 !important;
-        }
-
-        .consult-link-nav:hover {
-            background: rgba(201, 160, 80, 0.12) !important;
-            border-bottom-color: #c9a050 !important;
-            box-shadow: 0 0 20px rgba(201, 160, 80, 0.05);
-        }
-
-        /* ===== НАВИГАЦИЯ ===== */
-        nav {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        nav a {
-            color: #b8ab9a;
-            text-decoration: none;
-            font-size: 16px;
-            letter-spacing: 1.5px;
-            transition: 0.3s;
-            border-bottom: 2px solid transparent;
-            padding: 8px 6px 6px 6px;
-            position: relative;
-            white-space: nowrap;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #c9a050;
-            border-bottom-color: #c9a050;
-        }
-
-        /* ===== ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ===== */
-        .main-link,
-        .runes-link,
-        .horoscope-link,
-        .divination-link,
-        .gods-link,
-        .myth-link,
-        .consult-link,
-        .feedback-link,
-        .about-link,
-        .support-link {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .main-link .tooltip,
-        .runes-link .tooltip,
-        .horoscope-link .tooltip,
-        .divination-link .tooltip,
-        .gods-link .tooltip,
-        .myth-link .tooltip,
-        .consult-link .tooltip,
-        .feedback-link .tooltip,
-        .about-link .tooltip,
-        .support-link .tooltip {
-            visibility: hidden;
-            opacity: 0;
-            width: 230px;
-            background: rgba(20, 20, 35, 0.95);
-            color: #d4c9b8;
-            text-align: center;
-            padding: 14px 18px;
-            border-radius: 12px;
-            border: 1px solid rgba(201, 160, 80, 0.2);
-            font-family: 'Georgia', serif;
-            font-size: 14px;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
-            position: absolute;
-            top: calc(100% + 18px);
-            left: 50%;
-            transform: translateX(-50%) translateY(-5px);
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-            z-index: 100;
-            pointer-events: none;
-            white-space: normal;
-        }
-
-        .main-link .tooltip::after,
-        .runes-link .tooltip::after,
-        .horoscope-link .tooltip::after,
-        .divination-link .tooltip::after,
-        .gods-link .tooltip::after,
-        .myth-link .tooltip::after,
-        .consult-link .tooltip::after,
-        .feedback-link .tooltip::after,
-        .about-link .tooltip::after,
-        .support-link .tooltip::after {
-            content: '';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-bottom-color: rgba(201, 160, 80, 0.2);
-        }
-
-        .main-link:hover .tooltip,
-        .runes-link:hover .tooltip,
-        .horoscope-link:hover .tooltip,
-        .divination-link:hover .tooltip,
-        .gods-link:hover .tooltip,
-        .myth-link:hover .tooltip,
-        .consult-link:hover .tooltip,
-        .feedback-link:hover .tooltip,
-        .about-link:hover .tooltip,
-        .support-link:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .main-link .tooltip .highlight,
-        .runes-link .tooltip .highlight,
-        .horoscope-link .tooltip .highlight,
-        .divination-link .tooltip .highlight,
-        .gods-link .tooltip .highlight,
-        .myth-link .tooltip .highlight,
-        .consult-link .tooltip .highlight,
-        .feedback-link .tooltip .highlight,
-        .about-link .tooltip .highlight,
-        .support-link .tooltip .highlight {
-            color: #e8c85a;
-            font-weight: 700;
-            font-family: 'Cinzel', serif;
-        }
-
-        .main-link .tooltip .rune-icon,
-        .runes-link .tooltip .rune-icon,
-        .horoscope-link .tooltip .rune-icon,
-        .divination-link .tooltip .rune-icon,
-        .gods-link .tooltip .rune-icon,
-        .myth-link .tooltip .rune-icon,
-        .consult-link .tooltip .rune-icon,
-        .feedback-link .tooltip .rune-icon,
-        .about-link .tooltip .rune-icon,
-        .support-link .tooltip .rune-icon {
-            color: #e8c85a;
-            font-size: 20px;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        /* ===== АДАПТАЦИЯ ===== */
-        @media (max-width: 1100px) {
-            nav {
-                gap: 18px;
-            }
-            nav a {
-                font-size: 14px;
-                padding: 6px 4px 4px 4px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            nav {
-                gap: 14px;
-            }
-            nav a {
-                font-size: 13px;
-                letter-spacing: 1px;
-                padding: 6px 3px 4px 3px;
-            }
-            .main-link .tooltip,
-            .runes-link .tooltip,
-            .horoscope-link .tooltip,
-            .divination-link .tooltip,
-            .gods-link .tooltip,
-            .myth-link .tooltip,
-            .consult-link .tooltip,
-            .feedback-link .tooltip,
-            .about-link .tooltip,
-            .support-link .tooltip {
-                width: 200px;
-                font-size: 13px;
-                padding: 12px 14px;
-                top: calc(100% + 14px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav {
-                justify-content: center;
-                gap: 12px 16px;
-            }
-            nav a {
-                font-size: 14px;
-                letter-spacing: 1px;
-                padding: 6px 4px;
-                border-bottom-width: 2px;
-            }
-            .main-link .tooltip,
-            .runes-link .tooltip,
-            .horoscope-link .tooltip,
-            .divination-link .tooltip,
-            .gods-link .tooltip,
-            .myth-link .tooltip,
-            .consult-link .tooltip,
-            .feedback-link .tooltip,
-            .about-link .tooltip,
-            .support-link .tooltip {
-                width: 200px;
-                font-size: 13px;
-                padding: 12px 14px;
-                top: calc(100% + 12px);
-            }
-            .main-link .tooltip .rune-icon,
-            .runes-link .tooltip .rune-icon,
-            .horoscope-link .tooltip .rune-icon,
-            .divination-link .tooltip .rune-icon,
-            .gods-link .tooltip .rune-icon,
-            .myth-link .tooltip .rune-icon,
-            .consult-link .tooltip .rune-icon,
-            .feedback-link .tooltip .rune-icon,
-            .about-link .tooltip .rune-icon,
-            .support-link .tooltip .rune-icon {
-                font-size: 18px;
-            }
-            .consult-link-nav {
-                padding: 6px 8px 4px 8px !important;
-                font-size: 13px !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                gap: 8px 10px;
-            }
-            nav a {
-                font-size: 12px;
-                letter-spacing: 0.5px;
-                padding: 5px 3px;
-            }
-            .main-link .tooltip,
-            .runes-link .tooltip,
-            .horoscope-link .tooltip,
-            .divination-link .tooltip,
-            .gods-link .tooltip,
-            .myth-link .tooltip,
-            .consult-link .tooltip,
-            .feedback-link .tooltip,
-            .about-link .tooltip,
-            .support-link .tooltip {
-                width: 160px;
-                font-size: 11px;
-                padding: 10px 12px;
-                top: calc(100% + 10px);
-            }
-            .consult-link-nav {
-                padding: 5px 6px 3px 6px !important;
-                font-size: 11px !important;
-            }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
 
-        <!-- ===== ШАПКА С МЕНЮ ===== -->
         <header>
             <div class="logo">
                 ᛝᚲᚷᛉᚠᚨᚱ
                 <span>Старший Футарк · 24 руны</span>
             </div>
             <nav>
-                <a href="index.html" class="main-link">
-                    Главная
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚱ</span>
-                        <span class="highlight">Вернуться на главную</span><br>
-                        Главная страница с руническим кругом
-                    </span>
-                </a>
-                <a href="runes.html" class="runes-link">
-                    Руны
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚠ</span>
-                        <span class="highlight">Все 24 руны Футарка</span><br>
-                        Значения, символы и атты
-                    </span>
-                </a>
-                <a href="rune-horoscope.html" class="horoscope-link">
-                    Гороскоп
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛃ</span>
-                        <span class="highlight">Рунический гороскоп</span><br>
-                        Предсказание по дате рождения
-                    </span>
-                </a>
-                <a href="rune-divination.html" class="divination-link">
-                    Гадание
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛉ</span>
-                        <span class="highlight">Онлайн-гадание на рунах</span><br>
-                        Брось руны и узнай судьбу
-                    </span>
-                </a>
-                <a href="gods.html" class="gods-link">
-                    Боги
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚨ</span>
-                        <span class="highlight">Скандинавские боги</span><br>
-                        Один, Тор, Локи, Фрейя и другие
-                    </span>
-                </a>
-                <a href="mifolgi.html" class="myth-link">
-                    Мифология
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛝ</span>
-                        <span class="highlight">Подробная страница</span><br>
-                        Девять миров, руны и боги
-                    </span>
-                </a>
-                <a href="consultation.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
-                   ✈️ Консультация 
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚨ</span>
-                        <span class="highlight">Консультация рунолога</span><br>
-                        Помощь в вопросах жизни и судьбы
-                    </span>
-                </a>
-                <a href="feedback.html" class="feedback-link">
-                   📧 Обратная связь
-                    <span class="tooltip">
-                        <span class="rune-icon">ᚨ</span>
-                        <span class="highlight">Написать создателю</span><br>
-                        Вопросы, идеи и поддержка
-                    </span>
-                </a>
-                <a href="about.html" class="about-link">
-                    О сайте
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛉ</span>
-                        <span class="highlight">О проекте</span><br>
-                        Создатель, цели и поддержка
-                    </span>
-                </a>
-                <a href="support.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
-                    ₽ Поддержка
-                    <span class="tooltip">
-                        <span class="rune-icon">ᛉ</span>
-                        <span class="highlight">Поддержать создателя</span><br>
-                        Финансовая поддержка, информация об авторе
-                    </span>
-                </a>
+                <div class="nav-row nav-row-left">
+                    <a href="index.html" class="main-link">
+                        Главная
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚱ</span>
+                            <span class="highlight">Вернуться на главную</span><br>
+                            Главная страница с руническим кругом
+                        </span>
+                    </a>
+                    <a href="runes.html" class="runes-link">
+                        24 Руны Футарха
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚠ</span>
+                            <span class="highlight">Все 24 руны Футарка</span><br>
+                            Значения, символы и атты
+                        </span>
+                    </a>
+                    <a href="rune-horoscope.html" class="horoscope-link">
+                        Рунический гороскоп
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛃ</span>
+                            <span class="highlight">Рунический гороскоп</span><br>
+                            Предсказание по дате рождения
+                        </span>
+                    </a>
+                    <a href="rune-divination.html" class="divination-link">
+                        Гадание на рунах
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛉ</span>
+                            <span class="highlight">Онлайн-гадание на рунах</span><br>
+                            Брось руны и узнай судьбу
+                        </span>
+                    </a>
+                    <a href="gods.html" class="gods-link">
+                        Асы и Боги Скандинавии
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚨ</span>
+                            <span class="highlight">Скандинавские боги</span><br>
+                            Один, Тор, Локи, Фрейя и другие
+                        </span>
+                    </a>
+                    <a href="mifolgi.html" class="myth-link">
+                        Скандинавская мифология
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛝ</span>
+                            <span class="highlight">Подробная страница</span><br>
+                            Девять миров, руны и боги
+                        </span>
+                    </a>
+                    <a href="about.html" class="about-link">
+                        О создании сайте
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛉ</span>
+                            <span class="highlight">О проекте</span><br>
+                            Создатель, цели и поддержка
+                        </span>
+                    </a>
+                </div>
+
+                <div class="nav-row nav-row-right">
+                    <a href="feedback.html" class="feedback-link">
+                        📧 Обратная связь с поддержкой
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚨ</span>
+                            <span class="highlight">Написать разработчику сайта</span><br>
+                            Вопросы, идеи и поддержка
+                        </span>
+                    </a>
+                    <a href="consultation.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
+                        ✈️ Консультация рунолога
+                        <span class="tooltip">
+                            <span class="rune-icon">ᚨ</span>
+                            <span class="highlight">Консультация рунолога</span><br>
+                            Помощь в вопросах жизни и судьбы
+                        </span>
+                    </a>
+                    <a href="support.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
+                        ₽ Финансовая поддержка сайта
+                        <span class="tooltip">
+                            <span class="rune-icon">ᛉ</span>
+                            <span class="highlight">Поддержать создателя</span><br>
+                            Финансовая поддержка, информация об авторе
+                        </span>
+                    </a>
+                </div>
             </nav>
         </header>
 
@@ -837,7 +567,6 @@
 
             <div class="rune-daily-grid">
 
-                <!-- ===== ГАДАНИЕ ИЗ ТРЁХ РУН (ПРОШЛОЕ, НАСТОЯЩЕЕ, БУДУЩЕЕ) ===== -->
                 <div class="rune-daily-card">
                     <div class="label">✦ ГАДАНИЕ ИЗ ТРЁХ РУН ✦</div>
                     <p style="color: #b8ab9a; font-size: 13px; font-family: 'Georgia', serif; margin-bottom: 12px;">
@@ -869,7 +598,6 @@
                     <div class="footnote" style="margin-top: 12px;">Расклад «Прошлое — Настоящее — Будущее»</div>
                 </div>
 
-                <!-- ===== ГАДАНИЕ НА ОДНУ РУНУ ===== -->
                 <div class="rune-daily-card">
                     <div class="label">✦ ГАДАНИЕ НА ОДНУ РУНУ ✦</div>
                     <p style="color: #b8ab9a; font-size: 13px; font-family: 'Georgia', serif; margin-bottom: 12px;">
@@ -957,7 +685,6 @@
 
         </section>
 
-        <!-- ===== ПОДВАЛ ===== -->
         <footer>
             <p>ᛝᚲᚷᛉᚠᚨᚱ · 24 руны Старшего Футарка</p>
             <p style="margin-top: 8px;">
@@ -974,10 +701,6 @@
     </div>
 
     <script>
-        // ============================================================
-        // ===== ДАННЫЕ О РУНАХ =====
-        // ============================================================
-
         const runeData = {
             'ᚠ': { name: 'Феху', meaning: 'Феху — руна богатства и изобилия. Она наделяет человека энергией созидания, способностью создавать и приумножать. Люди-Феху — прирождённые предприниматели и творцы, они умеют превращать идеи в реальность.', link: 'rune-fechu.html' },
             'ᚢ': { name: 'Уруз', meaning: 'Уруз — руна первобытной силы и выносливости. Люди-Уруз обладают огромной внутренней мощью, они выносливы, упрямы и всегда добиваются поставленных целей.', link: 'rune-uruz.html' },
@@ -1010,10 +733,6 @@
             'ᚺ', 'ᚾ', 'ᛁ', 'ᛃ', 'ᛇ', 'ᛈ', 'ᛉ', 'ᛋ',
             'ᛏ', 'ᛒ', 'ᛖ', 'ᛗ', 'ᛚ', 'ᛝ', 'ᛟ', 'ᛞ'
         ];
-
-        // ============================================================
-        // ===== ГАДАНИЕ НА ТРИ РУНЫ (ПРОШЛОЕ, НАСТОЯЩЕЕ, БУДУЩЕЕ) =====
-        // ============================================================
 
         const threeRunesBtn = document.getElementById('threeRunesBtn');
         const runePast = document.getElementById('runePast');
@@ -1081,10 +800,6 @@
         });
 
         updateThreeRunes();
-
-        // ============================================================
-        // ===== ГАДАНИЕ НА ОДНУ РУНУ (КРУГ) =====
-        // ============================================================
 
         const oracleCircle = document.getElementById('oracleCircle');
         const oracleSymbol = document.getElementById('oracleSymbol');
