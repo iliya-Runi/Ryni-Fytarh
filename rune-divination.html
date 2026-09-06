@@ -277,10 +277,97 @@
             margin-top: 12px;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg) scale(0.5); opacity: 1; }
-            100% { transform: rotate(720deg) scale(1.5); opacity: 0; }
+        /* ===== ТРИ РУНЫ (ПРОШЛОЕ, НАСТОЯЩЕЕ, БУДУЩЕЕ) ===== */
+        .three-runes-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 20px 0 15px;
+            flex-wrap: wrap;
         }
+
+        .three-runes-container .rune-card-item {
+            text-align: center;
+            background: rgba(20, 20, 35, 0.3);
+            border: 1px solid rgba(201, 160, 80, 0.06);
+            border-radius: 16px;
+            padding: 20px 25px;
+            min-width: 120px;
+            transition: 0.3s;
+        }
+
+        .three-runes-container .rune-card-item:hover {
+            border-color: rgba(201, 160, 80, 0.15);
+            background: rgba(30, 30, 50, 0.3);
+        }
+
+        .three-runes-container .rune-card-item .position-label {
+            font-size: 11px;
+            color: #6a5f50;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .three-runes-container .rune-card-item .symbol {
+            font-size: 48px;
+            color: #c9a050;
+            display: block;
+            text-shadow: 0 0 30px rgba(201, 160, 80, 0.1);
+        }
+
+        .three-runes-container .rune-card-item .name {
+            font-size: 16px;
+            color: #e8ddd0;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .three-runes-container .rune-card-item .meaning {
+            font-size: 12px;
+            color: #b8ab9a;
+            font-family: 'Georgia', serif;
+            line-height: 1.5;
+            max-width: 180px;
+            margin-top: 6px;
+        }
+
+        .three-runes-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 40px;
+            background: rgba(201, 160, 80, 0.08);
+            border: 1px solid rgba(201, 160, 80, 0.2);
+            border-radius: 30px;
+            color: #e8c85a;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-family: 'Cinzel', serif;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .three-runes-btn:hover {
+            background: rgba(201, 160, 80, 0.2);
+            border-color: #c9a050;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 160, 80, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .three-runes-container .rune-card-item {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .three-runes-container .rune-card-item:nth-child(1) { animation-delay: 0.1s; }
+        .three-runes-container .rune-card-item:nth-child(2) { animation-delay: 0.2s; }
+        .three-runes-container .rune-card-item:nth-child(3) { animation-delay: 0.3s; }
 
         @media (max-width: 768px) {
             .divination-page h1 {
@@ -312,6 +399,19 @@
             .oracle-circle .symbol {
                 font-size: 40px;
             }
+            .three-runes-container {
+                gap: 15px;
+            }
+            .three-runes-container .rune-card-item {
+                padding: 15px 18px;
+                min-width: 100px;
+            }
+            .three-runes-container .rune-card-item .symbol {
+                font-size: 36px;
+            }
+            .three-runes-container .rune-card-item .name {
+                font-size: 14px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -328,11 +428,286 @@
             .quote-block .quote {
                 font-size: 17px;
             }
-            .rune-daily-card .symbol {
-                font-size: 48px;
+            .three-runes-container {
+                flex-direction: column;
+                gap: 12px;
             }
-            .rune-daily-card .name {
+            .three-runes-container .rune-card-item {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* ===== ВЫДЕЛЕННАЯ КНОПКА "КОНСУЛЬТАЦИЯ" ===== */
+        .consult-link-nav {
+            color: #c9a050 !important;
+            border-bottom-color: rgba(201, 160, 80, 0.3) !important;
+            font-weight: 700 !important;
+            background: rgba(201, 160, 80, 0.05);
+            padding: 8px 12px 6px 12px !important;
+            border-radius: 8px;
+            border-bottom: 2px solid #c9a050 !important;
+        }
+
+        .consult-link-nav:hover {
+            background: rgba(201, 160, 80, 0.12) !important;
+            border-bottom-color: #c9a050 !important;
+            box-shadow: 0 0 20px rgba(201, 160, 80, 0.05);
+        }
+
+        /* ===== НАВИГАЦИЯ ===== */
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: #b8ab9a;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+            padding: 8px 6px 6px 6px;
+            position: relative;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #c9a050;
+            border-bottom-color: #c9a050;
+        }
+
+        /* ===== ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ===== */
+        .main-link,
+        .runes-link,
+        .horoscope-link,
+        .divination-link,
+        .gods-link,
+        .myth-link,
+        .consult-link,
+        .feedback-link,
+        .about-link,
+        .support-link {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .main-link .tooltip,
+        .runes-link .tooltip,
+        .horoscope-link .tooltip,
+        .divination-link .tooltip,
+        .gods-link .tooltip,
+        .myth-link .tooltip,
+        .consult-link .tooltip,
+        .feedback-link .tooltip,
+        .about-link .tooltip,
+        .support-link .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            width: 230px;
+            background: rgba(20, 20, 35, 0.95);
+            color: #d4c9b8;
+            text-align: center;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(201, 160, 80, 0.2);
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            position: absolute;
+            top: calc(100% + 18px);
+            left: 50%;
+            transform: translateX(-50%) translateY(-5px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            pointer-events: none;
+            white-space: normal;
+        }
+
+        .main-link .tooltip::after,
+        .runes-link .tooltip::after,
+        .horoscope-link .tooltip::after,
+        .divination-link .tooltip::after,
+        .gods-link .tooltip::after,
+        .myth-link .tooltip::after,
+        .consult-link .tooltip::after,
+        .feedback-link .tooltip::after,
+        .about-link .tooltip::after,
+        .support-link .tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-bottom-color: rgba(201, 160, 80, 0.2);
+        }
+
+        .main-link:hover .tooltip,
+        .runes-link:hover .tooltip,
+        .horoscope-link:hover .tooltip,
+        .divination-link:hover .tooltip,
+        .gods-link:hover .tooltip,
+        .myth-link:hover .tooltip,
+        .consult-link:hover .tooltip,
+        .feedback-link:hover .tooltip,
+        .about-link:hover .tooltip,
+        .support-link:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .main-link .tooltip .highlight,
+        .runes-link .tooltip .highlight,
+        .horoscope-link .tooltip .highlight,
+        .divination-link .tooltip .highlight,
+        .gods-link .tooltip .highlight,
+        .myth-link .tooltip .highlight,
+        .consult-link .tooltip .highlight,
+        .feedback-link .tooltip .highlight,
+        .about-link .tooltip .highlight,
+        .support-link .tooltip .highlight {
+            color: #e8c85a;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+
+        .main-link .tooltip .rune-icon,
+        .runes-link .tooltip .rune-icon,
+        .horoscope-link .tooltip .rune-icon,
+        .divination-link .tooltip .rune-icon,
+        .gods-link .tooltip .rune-icon,
+        .myth-link .tooltip .rune-icon,
+        .consult-link .tooltip .rune-icon,
+        .feedback-link .tooltip .rune-icon,
+        .about-link .tooltip .rune-icon,
+        .support-link .tooltip .rune-icon {
+            color: #e8c85a;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ===== АДАПТАЦИЯ ===== */
+        @media (max-width: 1100px) {
+            nav {
+                gap: 18px;
+            }
+            nav a {
+                font-size: 14px;
+                padding: 6px 4px 4px 4px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                gap: 14px;
+            }
+            nav a {
+                font-size: 13px;
+                letter-spacing: 1px;
+                padding: 6px 3px 4px 3px;
+            }
+            .main-link .tooltip,
+            .runes-link .tooltip,
+            .horoscope-link .tooltip,
+            .divination-link .tooltip,
+            .gods-link .tooltip,
+            .myth-link .tooltip,
+            .consult-link .tooltip,
+            .feedback-link .tooltip,
+            .about-link .tooltip,
+            .support-link .tooltip {
+                width: 200px;
+                font-size: 13px;
+                padding: 12px 14px;
+                top: calc(100% + 14px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                justify-content: center;
+                gap: 12px 16px;
+            }
+            nav a {
+                font-size: 14px;
+                letter-spacing: 1px;
+                padding: 6px 4px;
+                border-bottom-width: 2px;
+            }
+            .main-link .tooltip,
+            .runes-link .tooltip,
+            .horoscope-link .tooltip,
+            .divination-link .tooltip,
+            .gods-link .tooltip,
+            .myth-link .tooltip,
+            .consult-link .tooltip,
+            .feedback-link .tooltip,
+            .about-link .tooltip,
+            .support-link .tooltip {
+                width: 200px;
+                font-size: 13px;
+                padding: 12px 14px;
+                top: calc(100% + 12px);
+            }
+            .main-link .tooltip .rune-icon,
+            .runes-link .tooltip .rune-icon,
+            .horoscope-link .tooltip .rune-icon,
+            .divination-link .tooltip .rune-icon,
+            .gods-link .tooltip .rune-icon,
+            .myth-link .tooltip .rune-icon,
+            .consult-link .tooltip .rune-icon,
+            .feedback-link .tooltip .rune-icon,
+            .about-link .tooltip .rune-icon,
+            .support-link .tooltip .rune-icon {
                 font-size: 18px;
+            }
+            .consult-link-nav {
+                padding: 6px 8px 4px 8px !important;
+                font-size: 13px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                gap: 8px 10px;
+            }
+            nav a {
+                font-size: 12px;
+                letter-spacing: 0.5px;
+                padding: 5px 3px;
+            }
+            .main-link .tooltip,
+            .runes-link .tooltip,
+            .horoscope-link .tooltip,
+            .divination-link .tooltip,
+            .gods-link .tooltip,
+            .myth-link .tooltip,
+            .consult-link .tooltip,
+            .feedback-link .tooltip,
+            .about-link .tooltip,
+            .support-link .tooltip {
+                width: 160px;
+                font-size: 11px;
+                padding: 10px 12px;
+                top: calc(100% + 10px);
+            }
+            .consult-link-nav {
+                padding: 5px 6px 3px 6px !important;
+                font-size: 11px !important;
             }
         }
     </style>
@@ -396,8 +771,8 @@
                         Девять миров, руны и боги
                     </span>
                 </a>
-                <a href="consultation.html" class="support-link" style="color: #c9a050; border-bottom-color: rgba(201,160,80,0.3);">
-                   ✦ Консультация 
+                <a href="consultation.html" class="consult-link-nav">
+                    ✦ Консультация
                     <span class="tooltip">
                         <span class="rune-icon">ᚨ</span>
                         <span class="highlight">Консультация рунолога</span><br>
@@ -442,17 +817,41 @@
 
             <div class="rune-daily-grid">
 
+                <!-- ===== ГАДАНИЕ ИЗ ТРЁХ РУН (ПРОШЛОЕ, НАСТОЯЩЕЕ, БУДУЩЕЕ) ===== -->
                 <div class="rune-daily-card">
-                    <div class="label">✦ РУНА ДНЯ ✦</div>
-                    <span class="symbol" id="dailyRune">ᚠ</span>
-                    <div class="name" id="dailyRuneName">Феху</div>
-                    <div class="meaning" id="dailyRuneMeaning">Богатство и изобилие. Созидательная энергия для новых начинаний.</div>
-                    <a href="#" id="dailyRuneLink" class="daily-rune-btn">✦ Подробнее о руне</a>
-                    <div class="footnote">Обновляется каждый день</div>
+                    <div class="label">✦ ГАДАНИЕ ИЗ ТРЁХ РУН ✦</div>
+                    <p style="color: #b8ab9a; font-size: 13px; font-family: 'Georgia', serif; margin-bottom: 12px;">
+                        Задайте вопрос в мыслях и нажмите кнопку, чтобы увидеть расклад из трёх рун ✦
+                    </p>
+
+                    <div class="three-runes-container" id="threeRunesContainer">
+                        <div class="rune-card-item" id="runePast">
+                            <div class="position-label">✦ Прошлое</div>
+                            <span class="symbol">ᚠ</span>
+                            <div class="name">Феху</div>
+                            <div class="meaning">Влияние прошлого</div>
+                        </div>
+                        <div class="rune-card-item" id="runePresent">
+                            <div class="position-label">✦ Настоящее</div>
+                            <span class="symbol">ᚢ</span>
+                            <div class="name">Уруз</div>
+                            <div class="meaning">Текущая ситуация</div>
+                        </div>
+                        <div class="rune-card-item" id="runeFuture">
+                            <div class="position-label">✦ Будущее</div>
+                            <span class="symbol">ᚨ</span>
+                            <div class="name">Ансуз</div>
+                            <div class="meaning">Возможный исход</div>
+                        </div>
+                    </div>
+
+                    <button class="three-runes-btn" id="threeRunesBtn">✦ Бросить руны ✦</button>
+                    <div class="footnote" style="margin-top: 12px;">Расклад «Прошлое — Настоящее — Будущее»</div>
                 </div>
 
+                <!-- ===== ГАДАНИЕ НА ОДНУ РУНУ ===== -->
                 <div class="rune-daily-card">
-                    <div class="label">✦ ГАДАНИЕ НА РУНАХ ✦</div>
+                    <div class="label">✦ ГАДАНИЕ НА ОДНУ РУНУ ✦</div>
                     <p style="color: #b8ab9a; font-size: 13px; font-family: 'Georgia', serif; margin-bottom: 12px;">
                         Задайте вопрос в мыслях и кликните по кругу ✦
                     </p>
@@ -555,6 +954,10 @@
     </div>
 
     <script>
+        // ============================================================
+        // ===== ДАННЫЕ О РУНАХ =====
+        // ============================================================
+
         const runeData = {
             'ᚠ': { name: 'Феху', meaning: 'Феху — руна богатства и изобилия. Она наделяет человека энергией созидания, способностью создавать и приумножать. Люди-Феху — прирождённые предприниматели и творцы, они умеют превращать идеи в реальность.', link: 'rune-fechu.html' },
             'ᚢ': { name: 'Уруз', meaning: 'Уруз — руна первобытной силы и выносливости. Люди-Уруз обладают огромной внутренней мощью, они выносливы, упрямы и всегда добиваются поставленных целей.', link: 'rune-uruz.html' },
@@ -588,54 +991,92 @@
             'ᛏ', 'ᛒ', 'ᛖ', 'ᛗ', 'ᛚ', 'ᛝ', 'ᛟ', 'ᛞ'
         ];
 
-        function getTodaysRune() {
-            const today = new Date();
-            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-            const index = dayOfYear % 24;
+        // ============================================================
+        // ===== ГАДАНИЕ НА ТРИ РУНЫ (ПРОШЛОЕ, НАСТОЯЩЕЕ, БУДУЩЕЕ) =====
+        // ============================================================
+
+        const threeRunesBtn = document.getElementById('threeRunesBtn');
+        const runePast = document.getElementById('runePast');
+        const runePresent = document.getElementById('runePresent');
+        const runeFuture = document.getElementById('runeFuture');
+
+        function getRandomRune() {
+            const index = Math.floor(Math.random() * 24);
             return runeSymbols[index];
         }
 
-        function updateDailyRune() {
-            const symbol = getTodaysRune();
+        function getRuneCardData(symbol) {
             const data = runeData[symbol];
-            if (data) {
-                document.getElementById('dailyRune').textContent = symbol;
-                document.getElementById('dailyRuneName').textContent = data.name;
-                document.getElementById('dailyRuneMeaning').textContent = data.meaning.slice(0, 120) + '...';
-                const link = document.getElementById('dailyRuneLink');
-                if (link) {
-                    const linkMap = {
-                        'ᚠ': 'rune-fechu.html',
-                        'ᚢ': 'rune-uruz.html',
-                        'ᚦ': 'rune-thurisaz.html',
-                        'ᚨ': 'rune-ansuz.html',
-                        'ᚱ': 'rune-raido.html',
-                        'ᚲ': 'rune-kenaz.html',
-                        'ᚷ': 'rune-gebo.html',
-                        'ᚹ': 'rune-wunjo.html',
-                        'ᚺ': 'rune-hagalaz.html',
-                        'ᚾ': 'rune-nauthiz.html',
-                        'ᛁ': 'rune-isa.html',
-                        'ᛃ': 'rune-jera.html',
-                        'ᛇ': 'rune-eihwaz.html',
-                        'ᛈ': 'rune-perthro.html',
-                        'ᛉ': 'rune-algiz.html',
-                        'ᛋ': 'rune-sowilo.html',
-                        'ᛏ': 'rune-tiwaz.html',
-                        'ᛒ': 'rune-berkana.html',
-                        'ᛖ': 'rune-ehwaz.html',
-                        'ᛗ': 'rune-mannaz.html',
-                        'ᛚ': 'rune-laguz.html',
-                        'ᛝ': 'rune-inguz.html',
-                        'ᛟ': 'rune-othala.html',
-                        'ᛞ': 'rune-dagaz.html'
-                    };
-                    link.href = linkMap[symbol] || '#';
-                }
-            }
+            return {
+                symbol: symbol,
+                name: data ? data.name : 'Руна',
+                meaning: data ? data.meaning.split('.')[0] : 'Значение'
+            };
         }
 
-        updateDailyRune();
+        function updateThreeRunes() {
+            // Получаем три случайные руны (могут повторяться)
+            const pastSymbol = getRandomRune();
+            let presentSymbol = getRandomRune();
+            let futureSymbol = getRandomRune();
+
+            // Можно сделать, чтобы руны не повторялись (раскомментируйте при желании)
+            // while (presentSymbol === pastSymbol) presentSymbol = getRandomRune();
+            // while (futureSymbol === pastSymbol || futureSymbol === presentSymbol) futureSymbol = getRandomRune();
+
+            const past = getRuneCardData(pastSymbol);
+            const present = getRuneCardData(presentSymbol);
+            const future = getRuneCardData(futureSymbol);
+
+            // Обновляем Прошлое
+            runePast.querySelector('.symbol').textContent = past.symbol;
+            runePast.querySelector('.name').textContent = past.name;
+            runePast.querySelector('.meaning').textContent = past.meaning;
+
+            // Обновляем Настоящее
+            runePresent.querySelector('.symbol').textContent = present.symbol;
+            runePresent.querySelector('.name').textContent = present.name;
+            runePresent.querySelector('.meaning').textContent = present.meaning;
+
+            // Обновляем Будущее
+            runeFuture.querySelector('.symbol').textContent = future.symbol;
+            runeFuture.querySelector('.name').textContent = future.name;
+            runeFuture.querySelector('.meaning').textContent = future.meaning;
+
+            // Добавляем анимацию (перезапускаем)
+            const container = document.getElementById('threeRunesContainer');
+            container.style.animation = 'none';
+            setTimeout(() => {
+                container.style.animation = '';
+            }, 10);
+        }
+
+        threeRunesBtn.addEventListener('click', function() {
+            this.textContent = '✦ Бросаем...';
+            this.disabled = true;
+            this.style.opacity = '0.6';
+
+            // Эффект "броска"
+            setTimeout(() => {
+                updateThreeRunes();
+                this.textContent = '✦ Бросить руны ✦';
+                this.disabled = false;
+                this.style.opacity = '1';
+            }, 500);
+
+            // Анимация кнопки
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+
+        // Инициализация при загрузке — показываем случайные руны
+        updateThreeRunes();
+
+        // ============================================================
+        // ===== ГАДАНИЕ НА ОДНУ РУНУ (КРУГ) =====
+        // ============================================================
 
         const oracleCircle = document.getElementById('oracleCircle');
         const oracleSymbol = document.getElementById('oracleSymbol');
@@ -669,6 +1110,7 @@
             });
         }
 
+        // Стили для анимации спиннера
         const styleSheet = document.createElement("style");
         styleSheet.textContent = `
             @keyframes spin {
